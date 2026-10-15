@@ -193,7 +193,11 @@ function drawPanel(p, img) {
   let y = wrapText(ctx, p.sub, 56, 214, textW, 36, 2) + 30;
   ctx.fillStyle = '#d0d0d0'; ctx.font = '400 28px "JetBrains Mono"';
   if (p.body) y = wrapText(ctx, p.body, 56, y, 912, 42, 5);
-  if (p.list) p.list.forEach((s, i) => ctx.fillText('— ' + s, 56 + (i % 2) * 456, y + Math.floor(i / 2) * 44));
+  if (p.list) {
+    const cols = p.list.length > 10 ? 3 : 2;
+    if (cols === 3) ctx.font = '400 24px "JetBrains Mono"';
+    p.list.forEach((s, i) => ctx.fillText('— ' + s, 56 + (i % cols) * (912 / cols), y + Math.floor(i / cols) * 44));
+  }
   if (p.tags) {
     ctx.font = '400 22px "JetBrains Mono"'; let x = 56;
     for (const t of p.tags) {
