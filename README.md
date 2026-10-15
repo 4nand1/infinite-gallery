@@ -2,7 +2,7 @@
 
 My portfolio as a looping 3D corridor — scroll (or swipe) to travel, click a panel to open it.
 
-Built with plain HTML + [three.js](https://threejs.org). No build step.
+Built with TypeScript, [three.js](https://threejs.org) and Vite.
 
-- Edit **`data.js`** to change the content on the walls.
-- Run locally with any static server, e.g. `npx serve .`
+- Edit **`src/data.ts`** to change the content on the walls.
+- `npm install`, then `npm run dev` to run locally, `npm run build` to typecheck and build into `dist/`.
