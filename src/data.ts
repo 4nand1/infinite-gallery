@@ -1,5 +1,13 @@
 // Edit this file to change what's on the walls. Panels are built in this order.
-window.PORTFOLIO = {
+export interface Work { title: string; subtitle: string; year: string; description: string; tags: string[]; live?: string; repo?: string }
+export interface PathStep { title: string; org: string; period: string; body: string }
+export interface Study { school: string; degree: string; period: string }
+export interface Portfolio {
+  name: string; title: string; location: string; avatar: string; bio: string; email: string; github: string;
+  skills: string[]; work: Work[]; path: PathStep[]; study: Study[];
+}
+
+export const portfolio: Portfolio = {
   name: "Anand",
   title: "Full-Stack Developer",
   location: "Ulaanbaatar, Mongolia",
